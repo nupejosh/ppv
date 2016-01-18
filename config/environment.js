@@ -3,7 +3,6 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ppv',
-  // namespaced directory where resolver will look for your resource files
     podModulePrefix: 'ppv/pods',
     environment: environment,
     baseURL: '/',
@@ -18,23 +17,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    torii: {
-      // a 'session' property will be injected on routes and controllers
-      // sessionServiceName: 'session',
-      providers: {
-        'venmo-oauth2': {
-          apiKey:      '3015',
-          scope:       ['access_phone','access_email', 'access_friends', 'make_payments', 'access_feed'],
-          redirectUri: '/auth/venmo/callback' // default is the current URL
-        }
-      }
-    }  
-
-};
+    }
+  };
 
   if (environment === 'development') {
-    ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;

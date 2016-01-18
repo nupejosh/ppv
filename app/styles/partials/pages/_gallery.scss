@@ -13,7 +13,11 @@
 
 	.gallery-wrapper {
 		overflow: hidden;
-		
+
+	  .masonry-item {
+      margin-bottom: 30px;
+    }
+	
 		.image {
 			width: 25%;
 			height: 190px;

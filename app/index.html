@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-  <!-- BREAK --> 
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +9,16 @@
 
     {{content-for 'head'}}
 
-
- 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/ppv.css">
 
     {{content-for 'head-footer'}}
   </head>
-
-
   <body>
-    <script src="assets/vendor.js"></script>
-    <script src="assets/ppv.js"></script>
     {{content-for 'body'}}
 
+    <script src="assets/vendor.js"></script>
+    <script src="assets/ppv.js"></script>
 
     {{content-for 'body-footer'}}
   </body>

@@ -1,1 +1,6 @@
+<h2 id="title">Welcome to Ember</h2>
+
 {{outlet}}
+{{#masonry-grid items=items as |item|}}
+  {{item.name}}
+{{/masonry-grid}}
