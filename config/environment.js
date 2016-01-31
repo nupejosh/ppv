@@ -7,6 +7,12 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'connect-src': "*",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'script-src': "'self' http://dev.vulk.co:3999/livereload.js http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js",
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -19,7 +25,11 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'homepage-gallery',
+    routeIfAlreadyAuthenticated: 'homepage-gallery'
+  } 
+ 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

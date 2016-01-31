@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('profile');
   this.route('dashboard');
   this.route('homepageGallery');
+  this.route('signup');
 });
 
 export default Router;

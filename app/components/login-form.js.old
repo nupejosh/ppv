@@ -1,0 +1,18 @@
+import Ember from 'ember';
+
+const { service } = Ember.inject;
+
+export default Ember.Component.extend({
+classNames: ['actions', 'signin clear', 'logo', 'content', 'brankic-pen', 'fields', 'form-control', 'btn', 'btn-primary', 'btn-lg', 'bottom-wrapper', 'message', 'active', 'fa', 'fa-check', 'signup-switcher'], 
+tagName: 'form', 
+ session: service('session'),
+
+  actions: {
+    submit() {
+      let { identification, password } = this.getProperties('identification', 'password');
+      return this.get('session').authenticate('authenticator:devise', identification, password).catch((reason) => {
+        this.set('errorMessage', reason.error);
+      });
+    }
+  }
+});

@@ -1,0 +1,29 @@
+		<form>
+			<!-- <div class="fields"> -->
+			<!-- 	<strong>Your information</strong> -->
+			<!-- 	<input class="form&#45;control" type="text" placeholder="Your full name" /> -->
+			<!-- 	<input class="form&#45;control" type="text" placeholder="Company name" /> -->
+			<!-- 	<input class="form&#45;control" type="text" placeholder="Your age" /> -->
+			<!-- </div> -->
+			<div class="fields">
+				<strong>Your access data</strong>
+				{{input value=accountEmail class="form-control" type="text" placeholder="Your email"}}
+				{{input value=accountPassword class="form-control" type="password" placeholder="Password"}}
+				<!-- <input class="form&#45;control" type="password" placeholder="Confirm password" /> -->
+			</div>
+			<!-- <div class="fields"> -->
+			<!-- 	<strong> -->
+			<!-- 		Payment information -->
+			<!-- 		<img src="images/credit_card_types.gif" class="pull&#45;right" /> -->
+			<!-- 	</strong> -->
+			<!-- 	<input class="form&#45;control" type="text" placeholder="Credit Card Number" /> -->
+			<!-- 	<input class="form&#45;control" type="text" placeholder="MM / YY" /> -->
+			<!-- 	<input class="form&#45;control" type="text" placeholder="CVV" /> -->
+			<!-- </div> -->
+			<!-- <div class="info"> -->
+			<!-- 	Your 30&#45;day trial will start now. After your trial ends, your credit card will be charged for the monthly <strong>Business plan for $59.00 USD on April 12, 2014.</strong> -->
+			<!-- </div> -->
+			<div class="signup">
+				<a {{action 'createAccount'}} href="index.html" class="btn btn-success btn-lg">Create my account</a>
+			</div>
+		</form>

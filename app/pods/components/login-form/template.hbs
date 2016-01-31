@@ -1,0 +1,34 @@
+<body id="signin" class="clear">
+
+	<h3>Welcome!</h3>
+
+	<div class="content">
+		<form>
+			<div class="fields">
+				<strong>Email address</strong>
+				{{input value=identification class="form-control" type="text" placeholder="Your email"}}
+			</div>
+			<div class="fields">
+				<strong>Password</strong>
+				{{input value=password class="form-control" type="password" placeholder="Password"}}
+			</div>
+			<!-- <div class="info"> -->
+			<!-- 	<label> -->
+			<!-- 		<input type="checkbox" name="remember" checked /> -->
+			<!-- 		Remember me -->
+			<!-- 	</label> -->
+			<!-- </div> -->
+			<div class="actions">
+				<a {{action "authenticate"}} href="index.html" class="btn btn-primary btn-lg">Sign in to your account</a>
+			</div>
+		</form>
+	</div>
+
+	<div class="bottom-wrapper">
+		<div class="message">
+			<span>Don't have an account?</span>
+      {{#link-to 'signup'}}Sign up here{{/link-to}}
+		</div>
+	</div>
+
+</body>

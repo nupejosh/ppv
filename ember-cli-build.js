@@ -2,7 +2,10 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var pickFiles = require('broccoli-static-compiler');
+var pickFiles = require('broccoli-funnel');
+var Funnel = require('broccoli-funnel');
+var MergeTrees = require('broccoli-merge-trees');
+
 module.exports = function(defaults) {
 var app = new EmberApp({
       sassOptions: {
@@ -11,6 +14,7 @@ var app = new EmberApp({
         ]
       }
   });
+
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
 // Use `app.import` to add additional libraries to the generated
@@ -28,30 +32,28 @@ var app = new EmberApp({
 
 //      app.import('bower_components/modernizr/src/Modernizr.js');
 //module.exports =app.import('bower_components/torii/dist/torii.amd.js');
-var flotjs = pickFiles('vendor/js/vendor/jquery.flot', {
-    srcDir: '/',
-    destDir: '/js'
-});
-var vendorjs = pickFiles('vendor/js/vendor', {
-    srcDir: '/',
-    destDir: '/js'
-});
-var messengerjs = pickFiles('vendor/js/vendor/messenger', {
-    srcDir: '/',
-    destDir: '/js'
-});
-var Fonts = pickFiles('vendor/fonts', {
+
+
+var flotjs = new Funnel('vendor/js/vendor/jquery.flot');
+var vendorjs = new Funnel('vendor');
+var bootstrapjs = new Funnel('vendor/js/bootstrap');
+var messengerjs = new Funnel('vendor/js/vendor/messenger');
+var Fonts = new Funnel('vendor/fonts');
+var vendorCss = new Funnel('vendor/vendor');
+var vendorMessengerCss = new Funnel('vendor/vendor/messenger');
+
+var Fontsss = pickFiles('vendor/fonts', {
     srcDir: '/',
     destDir: '/fonts'
 });
-var vendorcss = pickFiles('vendor/vendor', {
-    srcDir: '/',
-    destDir: '/vendor.css'
-});
-var vendorMessengerCss = pickFiles('vendor/vendor/messenger', {
-    srcDir: '/',
-    destDir: '/vendor.css'
-});
-app.import('vendor/js/theme.js');
-return  app.toTree([Fonts, vendorcss, vendorMessengerCss, messengerjs, vendorjs, flotjs]);
+var bootstrapcss = app.import('vendor/bootstrap.css');
+var bootstrapMincss = app.import('vendor/bootstrap.min.css');
+// app.import('vendor/compiled/theme.css');
+app.import('vendor/theme.js');
+var fontAwesome = app.import('vendor/vendor/font-awesome.min.css');
+
+app.import(bootstrapjs);
+var trees = new MergeTrees([Fonts, bootstrapjs, vendorCss, vendorMessengerCss, messengerjs, vendorjs, flotjs]);
+
+return  app.toTree(trees, fontAwesome, bootstrapjs, vendorjs, Fontsss, bootstrapcss, bootstrapMincss);
 };
