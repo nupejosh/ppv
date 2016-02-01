@@ -27,6 +27,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 
+# Use active_model_serializer to prepare json response to be accepted in proper format by EmberJS client 
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'
+
+# Use rails_api for working with client
+ gem 'rails-api'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

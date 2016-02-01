@@ -22,5 +22,10 @@ module Api
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # stop generating jbuilder files with rails scaffold in favor of using active_model_serializer 
+    # this doesn't conflict with the serializer at all, but I like not having the unecessary files invoked
+    config.generators.jbuilder = false
+
   end
 end
