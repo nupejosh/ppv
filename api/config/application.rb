@@ -26,6 +26,8 @@ module Api
     # stop generating jbuilder files with rails scaffold in favor of using active_model_serializer 
     # this doesn't conflict with the serializer at all, but I like not having the unecessary files invoked
     config.generators.jbuilder = false
-
+    
+    # keep the middle ware that rails api gets rid of 
+    config.api_only = false
   end
 end
