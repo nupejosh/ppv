@@ -27,7 +27,9 @@ module.exports = function(environment) {
   };
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: 'homepage-gallery',
-    routeIfAlreadyAuthenticated: 'homepage-gallery'
+    routeIfAlreadyAuthenticated: 'homepage-gallery',
+    authenticationRoute: 'login'
+
   } 
  
   if (environment === 'development') {
@@ -48,7 +50,10 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-  }
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:ephemeral'
+    }  
+}
 
   if (environment === 'production') {
 

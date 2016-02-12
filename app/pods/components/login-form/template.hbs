@@ -6,11 +6,11 @@
 		<form>
 			<div class="fields">
 				<strong>Email address</strong>
-				{{input value=identification class="form-control" type="text" placeholder="Your email"}}
+				{{input value=identification class="form-control identity" type="text" placeholder="Your email"}}
 			</div>
 			<div class="fields">
 				<strong>Password</strong>
-				{{input value=password class="form-control" type="password" placeholder="Password"}}
+				{{input value=password class="form-control pass" type="password" placeholder="Password"}}
 			</div>
 			<!-- <div class="info"> -->
 			<!-- 	<label> -->
@@ -19,7 +19,7 @@
 			<!-- 	</label> -->
 			<!-- </div> -->
 			<div class="actions">
-				<a {{action "authenticate"}} href="index.html" class="btn btn-primary btn-lg">Sign in to your account</a>
+				<a {{action "authenticate"}} href="index.html" class="signUp btn btn-primary btn-lg">Sign in to your account</a>
 			</div>
 		</form>
 	</div>

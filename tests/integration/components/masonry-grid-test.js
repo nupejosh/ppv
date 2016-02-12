@@ -21,5 +21,5 @@ test('it renders', function(assert) {
     {{/masonry-grid}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), '');
 });

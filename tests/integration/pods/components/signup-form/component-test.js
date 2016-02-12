@@ -12,14 +12,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{signup-form}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:" + EOL +
-  this.render(hbs`
-    {{#signup-form}}
-      template block text
-    {{/signup-form}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.createAccount').text().trim(), 'Create my account');
 });

@@ -1,6 +1,11 @@
+/* jshint unused: false */
 import Ember from 'ember';
+// import { masonryGrid } from 'ember-masonry-grid/components/masonry-grid/component';
 export { default } from 'ember-masonry-grid/components/masonry-grid/component';
-classNames: ['grid']
+
+// export default masonryGrid.extend({
+// classNames: ['grid']
+// });
 // classNames: ['content', 'menubar', 'sidebar-toggler', 'visible-xs', 'ion-navicon', 'page-title', 'btn','btn-success', 'pull-right', 'content-wrapper', 'clear-fix', 'gallery-wrapper']
   // didInsertElement: function() {
   //   console.log("my-masonry didInsertElement");
