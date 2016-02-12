@@ -24,8 +24,18 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Devise as the authentication library
-gem 'devise'
+# gem 'devise'
 
+# Use Devise_Token_Auth for authenticating with clients via tokens
+# This is a preffered way of authentication for security as well as better working emails that traditional devise
+gem 'devise_token_auth'
+
+# Use Omniauth for Third-party auth implementation
+# This is also a dependency of devise_token_auth
+gem 'omniauth'
+
+# Use rack-cors to accept request from the client
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use active_model_serializer to prepare json response to be accepted in proper format by EmberJS client 
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'

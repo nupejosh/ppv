@@ -16,6 +16,11 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # The following 3 config settings are set for mailcatcher to work with devise_token_auth
+  config.action_mailer.default_url_options = { :host => 'dev.vulk.co:3777' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => 'dev.vulk.co', :port => 1025 }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

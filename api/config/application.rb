@@ -26,8 +26,20 @@ module Api
     # stop generating jbuilder files with rails scaffold in favor of using active_model_serializer 
     # this doesn't conflict with the serializer at all, but I like not having the unecessary files invoked
     config.generators.jbuilder = false
-    
+
     # keep the middle ware that rails api gets rid of 
     config.api_only = false
+
+    # Use this to accept requests from outside domains(clients), in production this needs to be specific for security
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*',
+          :headers => :any,
+          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+          :methods => [:get, :post, :options, :delete, :put]
+      end
+    end
+
   end
 end

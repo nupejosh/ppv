@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :accounts, controllers: { sessions: 'sessions' }
+  mount_devise_token_auth_for 'User', at: 'auth'
+  # Routes to use if only using devise and not devise_token_auth
+  # devise_for :accounts, controllers: { sessions: 'sessions' }
   
 # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
